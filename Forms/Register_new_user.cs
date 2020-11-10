@@ -22,7 +22,16 @@ namespace Manager_1._0
             Entrance entrance_form = new Entrance();
             entrance_form.Show();
             this.Hide();
-
+            Register new_register = new Register();
+            string log = new_register.New_Register_log(textBox4.Text);
+            int pass = new_register.New_Register_pass(textBox1.Text, textBox2.Text, textBox3.Text);
+            string user = textBox1.Text + " " + textBox2.Text + " " + textBox3.Text;
+            int n_tab = Convert.ToInt32(textBox5.Text);
+            Worker new_user = new Worker();
+            new_user.in_array(user,log, pass, log);
+            var message = (user, n_tab, log, pass);
+            MessageBox.Show(Convert.ToString(message));
+            
         }
     }
 }
