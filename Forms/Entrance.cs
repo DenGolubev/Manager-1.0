@@ -17,12 +17,10 @@ namespace Manager_1._0
 {
     public partial class Entrance : Form
     {
-        My_Console Get_console = new My_Console();
+       
         public Entrance()
         {
             InitializeComponent();
-            
-
         }
         
 
@@ -33,7 +31,9 @@ namespace Manager_1._0
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Task.Factory.StartNew(Get_console.Console);
+            Register_new_user new_User_form = new Register_new_user();
+            new_User_form.Show();
+            this.Hide();
         }
 
         
