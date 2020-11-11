@@ -12,15 +12,17 @@ using System.IO;
 using Microsoft.Win32;
 using System.Net;
 using System.Runtime.InteropServices;
+using System.Data.SQLite;
 
 namespace Manager_1._0
 {
     public partial class Entrance : Form
     {
-       
+        DB_Manager manager_db = new DB_Manager();
         public Entrance()
         {
             InitializeComponent();
+            
         }
         
 
@@ -36,6 +38,9 @@ namespace Manager_1._0
             this.Hide();
         }
 
-        
+        private void Entrance_Load(object sender, EventArgs e)
+        {
+            manager_db.db();
+        }
     }
 }
